@@ -16,3 +16,13 @@
 *.exe
 *.out
 *.app
+
+build/
+*.uvguix.*
+*.uvgui.*
+*.uvoptx
+*.uvopt
+*.dep
+*.bak
+JLinkLog.txt
+JLinkSettings.ini
