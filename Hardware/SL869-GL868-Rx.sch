@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -7113,6 +7113,14 @@ Source: Fairchild .. BAT54.pdf</description>
 <wire x1="57.15" y1="194.31" x2="54.61" y2="194.31" width="0.1524" layer="97"/>
 <wire x1="54.61" y1="194.31" x2="54.61" y2="191.77" width="0.1524" layer="97"/>
 <wire x1="54.61" y1="191.77" x2="57.15" y2="191.77" width="0.1524" layer="97"/>
+<text x="360.68" y="289.56" size="1.778" layer="97">R9 value
+105K for 5V (use charger and D11,D7)
+82.5K for 4.1V (w/o charger no D11,D7)
+75K for 3.8V (w/o charger D11,D7)</text>
+<wire x1="358.14" y1="271.78" x2="358.14" y2="299.72" width="0.1524" layer="97"/>
+<text x="132.08" y="213.36" size="1.778" layer="97">DNP for SL869
+100K for SL868</text>
+<wire x1="129.54" y1="205.74" x2="129.54" y2="218.44" width="0.1524" layer="97"/>
 </plain>
 <instances>
 <instance part="SUPPLY1" gate="GND" x="162.56" y="111.76" rot="R90"/>
@@ -9610,4 +9618,10 @@ Source: Fairchild .. BAT54.pdf</description>
 </sheets>
 </schematic>
 </drawing>
+<compatibility>
+<note version="6.3" minversion="6.2.2" severity="warning">
+Since Version 6.2.2 text objects can contain more than one line,
+which will not be processed correctly with this version.
+</note>
+</compatibility>
 </eagle>
