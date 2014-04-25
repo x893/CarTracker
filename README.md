@@ -13,6 +13,6 @@ standard SIM or SIM On Chip
 
 Shared PCB on OSH Park:
 
-Cx version http://oshpark.com/shared_projects/XIMA28X3
-Rx version http://oshpark.com/shared_projects/yOSgSC2A
+Cx version http://oshpark.com/shared_projects/hou07XOD
+Rx version http://oshpark.com/shared_projects/wFTza6Pe
 
