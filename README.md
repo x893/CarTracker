@@ -9,3 +9,10 @@ CAN support,
 MMA7455 accelerometer,
 standard SIM or SIM On Chip
 64 pins version can use battery, USB and RFM70 module (or other)
+
+
+Shared PCB on OSH Park:
+
+Cx version http://oshpark.com/shared_projects/XIMA28X3
+Rx version http://oshpark.com/shared_projects/yOSgSC2A
+
