@@ -26,3 +26,5 @@ build/
 *.bak
 JLinkLog.txt
 JLinkSettings.ini
+*.b#?
+*.s#?
