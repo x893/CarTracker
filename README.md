@@ -16,3 +16,4 @@ Shared PCB on OSH Park:
 Cx version http://oshpark.com/shared_projects/hou07XOD
 Rx version http://oshpark.com/shared_projects/wFTza6Pe
 
+Cx version support direct connection GPS to GSM via wires (or change layout) so you can use buildin Python to implement tracker functions without STM32 MCU.
