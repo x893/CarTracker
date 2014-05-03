@@ -361,7 +361,7 @@
               <MiscControls>--c99</MiscControls>
               <Define>NDEBUG USE_STDPERIPH_DRIVER STM32F10X_MD_VL STM32F100CB VECT_TAB_OFFSET=0 BL_VERSION UTRACKER_4</Define>
               <Undefine></Undefine>
-              <IncludePath>src;src\FreeRTOS;src\FreeRTOS\include;src\FreeRTOS\portable\MemMang;src\FreeRTOS\portable\RVDS\ARM_CM3;src\nmealib\include;Libraries\STM32F10x_StdPeriph_Driver\inc</IncludePath>
+              <IncludePath>src;src\FreeRTOS.8.0.1;src\FreeRTOS.8.0.1\include;src\FreeRTOS.8.0.1\portable\MemMang;src\FreeRTOS.8.0.1\portable\RVDS\ARM_CM3;src\nmealib\include;Libraries\STM32F10x_StdPeriph_Driver\inc</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -848,7 +848,7 @@
               <MiscControls></MiscControls>
               <Define>NDEBUG USE_STDPERIPH_DRIVER STM32F10X_HD STM32F101RC VECT_TAB_OFFSET=0 BL_VERSION UTRACKER_3</Define>
               <Undefine></Undefine>
-              <IncludePath>src;src\FreeRTOS;src\FreeRTOS\include;src\FreeRTOS\portable\MemMang;src\FreeRTOS\portable\RVDS\ARM_CM3;src\nmealib\include;Libraries\STM32F10x_StdPeriph_Driver\inc</IncludePath>
+              <IncludePath>src;src\FreeRTOS.8.0.1;src\FreeRTOS.8.0.1\include;src\FreeRTOS.8.0.1\portable\MemMang;src\FreeRTOS.8.0.1\portable\RVDS\ARM_CM3;src\nmealib\include;Libraries\STM32F10x_StdPeriph_Driver\inc</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>

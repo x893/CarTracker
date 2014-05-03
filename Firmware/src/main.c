@@ -95,8 +95,8 @@ int main(void)
 	#define GPS_TASK_STACK	(( unsigned short ) ( 680 / 4))
 	#define GSM_TASK_STACK	(( unsigned short ) ( 740 / 4))
 
-	if (xTaskCreate ( vGpsTask, (signed char *)"GPS", GPS_TASK_STACK, NULL, (tskIDLE_PRIORITY + 1), NULL ) == pdPASS
-	&&	xTaskCreate ( vGsmTask, (signed char *)"GSM", GSM_TASK_STACK, NULL, (tskIDLE_PRIORITY + 2), NULL ) == pdPASS
+	if (xTaskCreate ( vGpsTask, "GPS", GPS_TASK_STACK, NULL, (tskIDLE_PRIORITY + 1), NULL ) == pdPASS
+	&&	xTaskCreate ( vGsmTask, "GSM", GSM_TASK_STACK, NULL, (tskIDLE_PRIORITY + 2), NULL ) == pdPASS
 	#if (USE_CAN_SUPPORT)
 	&&	xTaskCreate ( vCanTask, NULL, CAN_TASK_STACK, NULL, (tskIDLE_PRIORITY + 3), NULL ) == pdPASS
 	#endif

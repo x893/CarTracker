@@ -361,7 +361,7 @@
               <MiscControls></MiscControls>
               <Define>NDEBUG USE_STDPERIPH_DRIVER STM32F10X_MD_VL STM32F100CB VECT_TAB_OFFSET=0x1000 UTRACKER_4</Define>
               <Undefine></Undefine>
-              <IncludePath>src;src\FreeRTOS;src\FreeRTOS\include;src\FreeRTOS\portable\MemMang;src\FreeRTOS\portable\RVDS\ARM_CM3;src\nmealib\include;Libraries\STM32F10x_StdPeriph_Driver\inc</IncludePath>
+              <IncludePath>src;src\FreeRTOS.8.0.1;src\FreeRTOS.8.0.1\include;src\FreeRTOS.8.0.1\portable\MemMang;src\FreeRTOS.8.0.1\portable\RVDS\ARM_CM3;src\nmealib\include;Libraries\STM32F10x_StdPeriph_Driver\inc</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -487,32 +487,32 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>FreeRTOS</GroupName>
+          <GroupName>FreeRTOS.8.0.1</GroupName>
           <Files>
             <File>
               <FileName>heap_2.c</FileName>
               <FileType>1</FileType>
-              <FilePath>src\FreeRTOS\portable\MemMang\heap_2.c</FilePath>
+              <FilePath>src\FreeRTOS.8.0.1\portable\MemMang\heap_2.c</FilePath>
             </File>
             <File>
               <FileName>list.c</FileName>
               <FileType>1</FileType>
-              <FilePath>src\FreeRTOS\list.c</FilePath>
+              <FilePath>src\FreeRTOS.8.0.1\list.c</FilePath>
             </File>
             <File>
               <FileName>queue.c</FileName>
               <FileType>1</FileType>
-              <FilePath>src\FreeRTOS\queue.c</FilePath>
+              <FilePath>src\FreeRTOS.8.0.1\queue.c</FilePath>
             </File>
             <File>
               <FileName>tasks.c</FileName>
               <FileType>1</FileType>
-              <FilePath>src\FreeRTOS\tasks.c</FilePath>
+              <FilePath>src\FreeRTOS.8.0.1\tasks.c</FilePath>
             </File>
             <File>
               <FileName>port.c</FileName>
               <FileType>1</FileType>
-              <FilePath>src\FreeRTOS\portable\RVDS\ARM_CM3\port.c</FilePath>
+              <FilePath>src\FreeRTOS.8.0.1\portable\RVDS\ARM_CM3\port.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -988,7 +988,7 @@
               <MiscControls></MiscControls>
               <Define>NDEBUG USE_STDPERIPH_DRIVER STM32F10X_HD STM32F101RC VECT_TAB_OFFSET=0x1000 UTRACKER_3</Define>
               <Undefine></Undefine>
-              <IncludePath>src;Libraries\STM32F10x_StdPeriph_Driver\inc;src\FreeRTOS;src\FreeRTOS\include;src\FreeRTOS\portable\MemMang;src\FreeRTOS\portable\RVDS\ARM_CM3;src\nmealib\include</IncludePath>
+              <IncludePath>src;Libraries\STM32F10x_StdPeriph_Driver\inc;src\FreeRTOS.8.0.1;src\FreeRTOS.8.0.1\include;src\FreeRTOS.8.0.1\portable\MemMang;src\FreeRTOS.8.0.1\portable\RVDS\ARM_CM3;src\nmealib\include</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -1114,32 +1114,32 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>FreeRTOS</GroupName>
+          <GroupName>FreeRTOS.8.0.1</GroupName>
           <Files>
             <File>
               <FileName>heap_2.c</FileName>
               <FileType>1</FileType>
-              <FilePath>src\FreeRTOS\portable\MemMang\heap_2.c</FilePath>
+              <FilePath>src\FreeRTOS.8.0.1\portable\MemMang\heap_2.c</FilePath>
             </File>
             <File>
               <FileName>list.c</FileName>
               <FileType>1</FileType>
-              <FilePath>src\FreeRTOS\list.c</FilePath>
+              <FilePath>src\FreeRTOS.8.0.1\list.c</FilePath>
             </File>
             <File>
               <FileName>queue.c</FileName>
               <FileType>1</FileType>
-              <FilePath>src\FreeRTOS\queue.c</FilePath>
+              <FilePath>src\FreeRTOS.8.0.1\queue.c</FilePath>
             </File>
             <File>
               <FileName>tasks.c</FileName>
               <FileType>1</FileType>
-              <FilePath>src\FreeRTOS\tasks.c</FilePath>
+              <FilePath>src\FreeRTOS.8.0.1\tasks.c</FilePath>
             </File>
             <File>
               <FileName>port.c</FileName>
               <FileType>1</FileType>
-              <FilePath>src\FreeRTOS\portable\RVDS\ARM_CM3\port.c</FilePath>
+              <FilePath>src\FreeRTOS.8.0.1\portable\RVDS\ARM_CM3\port.c</FilePath>
             </File>
           </Files>
         </Group>
