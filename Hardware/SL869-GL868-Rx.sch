@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.4">
+<eagle version="6.5.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -7358,8 +7358,8 @@ Source: Fairchild .. BAT54.pdf</description>
 <instance part="CPU-VCC" gate="G$1" x="271.78" y="147.32"/>
 <instance part="PA2A" gate="G$1" x="284.48" y="154.94" rot="R90"/>
 <instance part="PA3A" gate="G$1" x="281.94" y="152.4" rot="R90"/>
-<instance part="GPS-RXD" gate="G$1" x="289.56" y="134.62"/>
-<instance part="GPS-TXD" gate="G$1" x="292.1" y="132.08"/>
+<instance part="GPS-RXD" gate="G$1" x="290.83" y="134.62"/>
+<instance part="GPS-TXD" gate="G$1" x="293.37" y="132.08"/>
 <instance part="GSM-RTS" gate="G$1" x="309.88" y="134.62" rot="R90"/>
 <instance part="GSM-RXD" gate="G$1" x="373.38" y="186.69"/>
 <instance part="GSM-TXD" gate="G$1" x="377.19" y="184.15"/>
@@ -7796,10 +7796,9 @@ Source: Fairchild .. BAT54.pdf</description>
 <segment>
 <pinref part="JP3" gate="G$1" pin="1"/>
 <pinref part="SUPPLY48" gate="GND" pin="GND"/>
-</segment>
-<segment>
 <pinref part="JP18" gate="G$1" pin="2"/>
 <pinref part="SUPPLY49" gate="GND" pin="GND"/>
+<junction x="332.74" y="237.49"/>
 </segment>
 <segment>
 <wire x1="309.88" y1="96.52" x2="304.8" y2="96.52" width="0.1524" layer="91"/>
@@ -8324,12 +8323,12 @@ Source: Fairchild .. BAT54.pdf</description>
 </net>
 <net name="PA10.GPS-TXD" class="0">
 <segment>
-<wire x1="312.42" y1="129.54" x2="292.1" y2="129.54" width="0.1524" layer="91"/>
+<wire x1="312.42" y1="129.54" x2="293.37" y2="129.54" width="0.1524" layer="91"/>
 <label x="288.29" y="129.54" size="1.27" layer="95" rot="R180" xref="yes"/>
 <pinref part="U11" gate="PORTA_H" pin="PA10"/>
 <pinref part="GPS-TXD" gate="G$1" pin="TP"/>
-<wire x1="292.1" y1="129.54" x2="288.29" y2="129.54" width="0.1524" layer="91"/>
-<junction x="292.1" y="129.54"/>
+<wire x1="293.37" y1="129.54" x2="288.29" y2="129.54" width="0.1524" layer="91"/>
+<junction x="293.37" y="129.54"/>
 </segment>
 <segment>
 <wire x1="62.23" y1="179.07" x2="63.5" y2="179.07" width="0.1524" layer="91"/>
@@ -8341,12 +8340,12 @@ Source: Fairchild .. BAT54.pdf</description>
 </net>
 <net name="PA9.GPS-RXD" class="0">
 <segment>
-<wire x1="312.42" y1="132.08" x2="289.56" y2="132.08" width="0.1524" layer="91"/>
+<wire x1="312.42" y1="132.08" x2="290.83" y2="132.08" width="0.1524" layer="91"/>
 <label x="288.29" y="132.08" size="1.27" layer="95" rot="R180" xref="yes"/>
 <pinref part="U11" gate="PORTA_H" pin="PA9"/>
 <pinref part="GPS-RXD" gate="G$1" pin="TP"/>
-<wire x1="289.56" y1="132.08" x2="288.29" y2="132.08" width="0.1524" layer="91"/>
-<junction x="289.56" y="132.08"/>
+<wire x1="290.83" y1="132.08" x2="288.29" y2="132.08" width="0.1524" layer="91"/>
+<junction x="290.83" y="132.08"/>
 </segment>
 <segment>
 <wire x1="62.23" y1="191.77" x2="64.77" y2="191.77" width="0.1524" layer="91"/>
@@ -9247,15 +9246,13 @@ Source: Fairchild .. BAT54.pdf</description>
 </net>
 <net name="GSM-ANT" class="0">
 <segment>
+<wire x1="96.52" y1="114.3" x2="114.3" y2="114.3" width="0.1524" layer="91"/>
+<label x="99.06" y="114.3" size="1.778" layer="95"/>
+<pinref part="U14" gate="G$1" pin="ANT"/>
 <wire x1="124.46" y1="114.3" x2="114.3" y2="114.3" width="0.1524" layer="91"/>
 <junction x="114.3" y="114.3"/>
 <pinref part="ANT2" gate="G$1" pin="ANT"/>
 <pinref part="ANT4" gate="G$1" pin="ANT"/>
-</segment>
-<segment>
-<wire x1="96.52" y1="114.3" x2="116.84" y2="114.3" width="0.1524" layer="91"/>
-<label x="99.06" y="114.3" size="1.778" layer="95"/>
-<pinref part="U14" gate="G$1" pin="ANT"/>
 </segment>
 </net>
 <net name="PB4" class="0">
@@ -9297,11 +9294,8 @@ Source: Fairchild .. BAT54.pdf</description>
 </net>
 <net name="GPS-RX1" class="0">
 <segment>
-<wire x1="68.58" y1="194.31" x2="62.23" y2="194.31" width="0.1524" layer="91"/>
+<wire x1="69.85" y1="194.31" x2="62.23" y2="194.31" width="0.1524" layer="91"/>
 <pinref part="JP2" gate="G$1" pin="3"/>
-</segment>
-<segment>
-<wire x1="69.85" y1="194.31" x2="68.58" y2="194.31" width="0.1524" layer="91"/>
 <wire x1="69.85" y1="194.31" x2="69.85" y2="204.47" width="0.1524" layer="91"/>
 <pinref part="U15" gate="G$1" pin="RX"/>
 <wire x1="69.85" y1="204.47" x2="81.28" y2="204.47" width="0.1524" layer="91"/>
@@ -9487,11 +9481,6 @@ Source: Fairchild .. BAT54.pdf</description>
 <junction x="124.46" y="177.8"/>
 </segment>
 </net>
-<net name="N$2" class="0">
-<segment>
-<wire x1="138.43" y1="186.69" x2="139.7" y2="186.69" width="0.1524" layer="91"/>
-</segment>
-</net>
 <net name="N$3" class="0">
 <segment>
 <wire x1="269.24" y1="124.46" x2="271.78" y2="124.46" width="0.1524" layer="91"/>
@@ -9521,20 +9510,6 @@ Source: Fairchild .. BAT54.pdf</description>
 <wire x1="127" y1="204.47" x2="121.92" y2="204.47" width="0.1524" layer="91"/>
 <wire x1="121.92" y1="204.47" x2="121.92" y2="196.85" width="0.1524" layer="91"/>
 <wire x1="121.92" y1="196.85" x2="116.84" y2="196.85" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="RXD1" class="0">
-<segment>
-<pinref part="U14" gate="G$1" pin="RXD_AUX(I)"/>
-<wire x1="45.72" y1="73.66" x2="22.86" y2="73.66" width="0.1524" layer="91"/>
-<label x="22.86" y="73.66" size="1.27" layer="95" rot="R180" xref="yes"/>
-</segment>
-</net>
-<net name="TXD1" class="0">
-<segment>
-<pinref part="U14" gate="G$1" pin="TXD_AUX(O)"/>
-<wire x1="45.72" y1="71.12" x2="22.86" y2="71.12" width="0.1524" layer="91"/>
-<label x="22.86" y="71.12" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="N$22" class="0">

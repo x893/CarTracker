@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.4">
+<eagle version="6.5.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -158,7 +158,7 @@
 <libraries>
 <library name="X893">
 <packages>
-<package name="SOT-23@1">
+<package name="SOT-23">
 <wire x1="-1.5" y1="0.7" x2="1.5" y2="0.7" width="0.127" layer="21"/>
 <wire x1="1.5" y1="0.7" x2="1.5" y2="-0.7" width="0.127" layer="21"/>
 <wire x1="1.5" y1="-0.7" x2="-1.5" y2="-0.7" width="0.127" layer="21"/>
@@ -213,20 +213,6 @@
 <text x="-3.81" y="0" size="0.4064" layer="27">&gt;VALUE</text>
 <hole x="0" y="2.2" drill="0.9"/>
 <hole x="0" y="-2.2" drill="0.9"/>
-</package>
-<package name="SOT-23">
-<wire x1="-1.5" y1="0.7" x2="1.5" y2="0.7" width="0.127" layer="21"/>
-<wire x1="1.5" y1="0.7" x2="1.5" y2="-0.7" width="0.127" layer="21"/>
-<wire x1="1.5" y1="-0.7" x2="-1.5" y2="-0.7" width="0.127" layer="21"/>
-<wire x1="-1.5" y1="-0.7" x2="-1.5" y2="0.7" width="0.127" layer="21"/>
-<smd name="1" x="-0.95" y="-1.1" dx="0.8" dy="1" layer="1" roundness="50"/>
-<smd name="2" x="0.95" y="-1.1" dx="0.8" dy="1" layer="1" roundness="50"/>
-<smd name="3" x="0" y="1.1" dx="0.8" dy="1" layer="1" roundness="50"/>
-<text x="-1" y="-0.25" size="0.5" layer="25">&gt;NAME</text>
-<text x="2" y="1" size="0.5" layer="27" rot="R270">&gt;VALUE</text>
-<rectangle x1="-0.2" y1="0.75" x2="0.2" y2="1.25" layer="51"/>
-<rectangle x1="0.75" y1="-1.25" x2="1.15" y2="-0.75" layer="51"/>
-<rectangle x1="-1.15" y1="-1.25" x2="-0.75" y2="-0.75" layer="51"/>
 </package>
 <package name="SO08">
 <description>&lt;b&gt;Small Outline Package&lt;/b&gt; Fits JEDEC packages (narrow SOIC-8)</description>
@@ -1579,7 +1565,7 @@ Please make sure your boards conform to these design rules.</description>
 <element name="C29" library="X893" package="0603" value="4.7u" x="33.7" y="33.7" rot="R180"/>
 <element name="R20" library="X893" package="0603" value="22K" x="32.4" y="31.6" rot="R270"/>
 <element name="R21" library="X893" package="0603" value="22K" x="34" y="31.6" rot="R90"/>
-<element name="D4" library="X893" package="SOT-23@1" value="BAV99" x="14.8" y="14.4" rot="R270"/>
+<element name="D4" library="X893" package="SOT-23" value="BAV99" x="14.8" y="14.4" rot="R270"/>
 <element name="C13" library="X893" package="0603" value="0.1u" x="17.4" y="16.8"/>
 <element name="R26" library="X893" package="0603" value="100K" x="14.6" y="16.8"/>
 <element name="R27" library="X893" package="0603" value="100K" x="14.6" y="18.4"/>
@@ -4518,15 +4504,6 @@ Please make sure your boards conform to these design rules.</description>
 </signal>
 <signal name="N$17">
 <wire x1="27.6" y1="7.4" x2="26.6" y2="7.4" width="0.2" layer="1"/>
-</signal>
-<signal name="RXD1">
-<contactref element="U14" pad="44"/>
-</signal>
-<signal name="TXD1">
-<contactref element="U14" pad="45"/>
-</signal>
-<signal name="N$2">
-<wire x1="55.2" y1="20.8" x2="55.2" y2="20" width="0.2" layer="16"/>
 </signal>
 <signal name="N$20">
 <wire x1="52.6" y1="20.6" x2="53.2" y2="20.6" width="0.2" layer="16"/>
