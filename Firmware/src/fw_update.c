@@ -116,11 +116,16 @@ bool FwCheckImage(uint32_t base)
 	BL_INFO_t *bl_info = FwGetBlInfo(base);
 	
 	if (bl_info->Signature == FW_SIGNATURE
-	&&	bl_info->FwSize <= MAX_FW_SIZE
 	&&	((*(volatile uint32_t*)base) & 0x2FFE0000) == 0x20000000
-	&&	GetCRC32((uint32_t *)base, (bl_info->FwSize + 3) / 4, &bl_info->FwCRC32) == bl_info->FwCRC32
 		)
+	{
+		if (bl_info->FwSize == 0 && bl_info->FwCRC32 == 0xAA55BB66)
+			return true;
+		if (bl_info->FwSize <= MAX_FW_SIZE
+		&&	GetCRC32((uint32_t *)base, (bl_info->FwSize + 3) / 4, &bl_info->FwCRC32) == bl_info->FwCRC32
+			)
 		return true;
+	}
 	return false;
 }
 

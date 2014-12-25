@@ -20,6 +20,8 @@
 build/
 *.uvguix.*
 *.uvgui.*
+*.uvproj.*
+*.uvprojx.saved_uv4
 *.uvoptx
 *.uvopt
 *.dep
@@ -28,3 +30,5 @@ JLinkLog.txt
 JLinkSettings.ini
 *.b#?
 *.s#?
+*.tmp
+*.custom

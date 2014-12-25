@@ -1,14 +1,20 @@
 #include "hardware.h"
 
-void Led_on(void)
+void Led1_On()
 {
-	pinHigh(LED_PIN);
+	pinHigh(LED1_PIN);
+	pinLow (LED2_PIN);
 }
-void Led_off(void)
+void Led2_On(void)
 {
-	pinLow(LED_PIN);
+	pinLow (LED1_PIN);
+	pinHigh(LED2_PIN);
 }
-
+void Leds_Off(void)
+{
+	pinLow (LED1_PIN);
+	pinLow (LED2_PIN);
+}
 
 #if defined( STM32F2XX ) || defined( STM32F4XX )
 
@@ -69,8 +75,7 @@ void pinMode(uint8_t pin, PinMode_Type mode)
 	uint8_t pin2;
 	GPIO_TypeDef * port = GPIO_PORT(pin);
 	
-	pin &= 0x0F;
-	crx = (pin < 8) ? &(port->CRL) : &(port->CRH);
+	crx = (pin & 0x08) ? &(port->CRH) : &(port->CRL);
 	pin2 = (pin & 0x07) << 2;
 	mask = ~(0x0F << pin2);
 	*crx = (*crx & mask) | ((mode & 0x0F) << pin2);

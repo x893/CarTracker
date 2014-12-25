@@ -222,8 +222,9 @@ u8 Base64Encode(char* outbuf, int outlen, char* string)
 uint32_t GetCRC32(uint32_t * address, int u32_count, uint32_t * exclude)
 {
 	CRC_ResetDR();
-	while(u32_count-- != 0)
+	while(u32_count != 0)
 	{
+		u32_count--;
 		if (address == exclude)
 			CRC->DR = 0;
 		else

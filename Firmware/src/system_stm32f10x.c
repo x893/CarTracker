@@ -265,15 +265,6 @@ void SetSysClockTo24(void)
 	while (((RCC->CR & RCC_CR_HSERDY) == RESET) && (StartUpCounter-- != 0));
 	if ((RCC->CR & RCC_CR_HSERDY) != RESET)
 	{
-#if !defined STM32F10X_LD_VL && !defined STM32F10X_MD_VL && !defined STM32F10X_HD_VL 
-		/* Enable Prefetch Buffer */
-		FLASH->ACR |= FLASH_ACR_PRFTBE;
-
-		/* Flash 0 wait state */
-		FLASH->ACR &= ~FLASH_ACR_LATENCY;
-		FLASH->ACR |= FLASH_ACR_LATENCY_0;
-#endif
-
 		/* HCLK = SYSCLK */
 		RCC->CFGR |= RCC_CFGR_HPRE_DIV1;
       

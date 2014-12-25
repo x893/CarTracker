@@ -2,6 +2,7 @@
 #define __DEBUG_H__
 
 #include "hardware.h"
+#include <stdio.h>
 
 #if ( USE_SERIAL_DEBUG )
 
@@ -18,6 +19,7 @@
 
 	void DebugPutLineln(const char *msg);
 	#define DEBUG_LINE(m)	DebugPutLineln(m)
+	#define DEBUG_PRINTF(f,...)	printf(f, __VA_ARGS__)
 
 #elif ( USE_USB_DEBUG )
 

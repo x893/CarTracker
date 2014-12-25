@@ -51,8 +51,10 @@ void	pinHigh		(uint8_t pin);
 void	pinToggle	(uint8_t pin);
 void	pinRemap	(uint8_t pin, uint8_t GPIO_AF);
 
-void Led_on(void);
-void Led_off(void);
+void Led1_On(void);
+void Led2_On(void);
+void Leds_Off(void);
+
 
 
 #define ERROR_LOWEST_POWER			0x02
@@ -358,16 +360,15 @@ extern const char VERSION[];
 
 	#define LED1_PIN			PB3
 	#define LED2_PIN			PB4
-	#define LED_PIN				LED1_PIN
-	
-	#define LED1_ON()			pinHigh(LED1_PIN); pinLow(LED2_PIN)
-	#define LED1_OFF()			pinLow(LED1_PIN); pinLow(LED2_PIN)
-	#define LED2_ON()			pinHigh(LED2_PIN); pinLow(LED1_PIN)
-	#define LED2_OFF()			pinLow(LED2_PIN); pinLow(LED1_PIN)
 
-	#define LED_ON()			Led_on()
-	#define LED_OFF()			Led_off()
-	#define LED_TOGGLE()		pinToggle(LED1_PIN)
+	#define LED1_ON()			Led1_On()
+	#define LED1_OFF()			Leds_Off()
+	#define LED2_ON()			Led2_On()
+	#define LED2_OFF()			Leds_Off()
+
+	#define LED_ON()			LED1_ON()
+	#define LED_OFF()			LED1_OFF()
+
 	#define LED_INIT()			\
 		do	{					\
 			pinLow(LED1_PIN);					\

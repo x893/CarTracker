@@ -411,7 +411,7 @@ static void prvInitialiseTCBVariables( TCB_t * const pxTCB, const char * const p
  * currently in the Suspended state, or pdFALSE if the task referenced by xTask
  * is in any other state.
  */
-static BaseType_t prvTaskIsTaskSuspended( const TaskHandle_t xTask ) PRIVILEGED_FUNCTION;
+BaseType_t prvTaskIsTaskSuspended( const TaskHandle_t xTask ) PRIVILEGED_FUNCTION;
 
 /*
  * Utility to ready all the lists used by the scheduler.  This is called

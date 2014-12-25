@@ -395,11 +395,11 @@ restart_gps:
 			goto restart_gps;
 		}
 
-		if (!gpsWaitComplete(gc, 5000))		// Wait for packet within 5 seconds
+		if (!gpsWaitComplete(gc, 10000))		// Wait for packet within 5 seconds
 		{	// No data from GPS within 5 seconds
 			gc->RxMode = GPS_MODE_START;
 			ShowError(ERROR_GPS_NO_DATA);
-			gc->NoDataTimer += 5;
+			gc->NoDataTimer += 10;
 			continue;
 		}
 

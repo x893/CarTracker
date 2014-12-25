@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.4">
+<eagle version="7.2.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
+<grid distance="0.2" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -56,7 +56,7 @@
 <layer number="46" name="Milling" color="3" fill="1" visible="no" active="yes"/>
 <layer number="47" name="Measures" color="7" fill="1" visible="no" active="yes"/>
 <layer number="48" name="Document" color="7" fill="1" visible="no" active="yes"/>
-<layer number="49" name="Reference" color="14" fill="1" visible="no" active="yes"/>
+<layer number="49" name="Reference" color="14" fill="1" visible="yes" active="yes"/>
 <layer number="50" name="dxf" color="7" fill="1" visible="no" active="yes"/>
 <layer number="51" name="tDocu" color="6" fill="1" visible="no" active="yes"/>
 <layer number="52" name="bDocu" color="6" fill="1" visible="no" active="yes"/>
@@ -209,20 +209,6 @@
 <libraries>
 <library name="X893">
 <packages>
-<package name="SOT-23@1">
-<wire x1="-1.5" y1="0.7" x2="1.5" y2="0.7" width="0.127" layer="21"/>
-<wire x1="1.5" y1="0.7" x2="1.5" y2="-0.7" width="0.127" layer="21"/>
-<wire x1="1.5" y1="-0.7" x2="-1.5" y2="-0.7" width="0.127" layer="21"/>
-<wire x1="-1.5" y1="-0.7" x2="-1.5" y2="0.7" width="0.127" layer="21"/>
-<smd name="1" x="-0.95" y="-1.1" dx="0.8" dy="1" layer="1" roundness="50"/>
-<smd name="2" x="0.95" y="-1.1" dx="0.8" dy="1" layer="1" roundness="50"/>
-<smd name="3" x="0" y="1.1" dx="0.8" dy="1" layer="1" roundness="50"/>
-<text x="-1" y="-0.25" size="0.5" layer="25">&gt;NAME</text>
-<text x="2" y="1" size="0.5" layer="27" rot="R270">&gt;VALUE</text>
-<rectangle x1="-0.2" y1="0.75" x2="0.2" y2="1.25" layer="51"/>
-<rectangle x1="0.75" y1="-1.25" x2="1.15" y2="-0.75" layer="51"/>
-<rectangle x1="-1.15" y1="-1.25" x2="-0.75" y2="-0.75" layer="51"/>
-</package>
 <package name="SOT-23">
 <wire x1="-1.5" y1="0.7" x2="1.5" y2="0.7" width="0.127" layer="21"/>
 <wire x1="1.5" y1="0.7" x2="1.5" y2="-0.7" width="0.127" layer="21"/>
@@ -1204,6 +1190,9 @@ Please make sure your boards conform to these design rules.</description>
 <autorouter>
 <pass name="Default">
 <param name="RoutingGrid" value="50mil"/>
+<param name="AutoGrid" value="1"/>
+<param name="Efforts" value="0"/>
+<param name="TopRouterVariant" value="1"/>
 <param name="tpViaShape" value="round"/>
 <param name="PrefDir.1" value="|"/>
 <param name="PrefDir.2" value="0"/>
@@ -1298,7 +1287,7 @@ Please make sure your boards conform to these design rules.</description>
 <element name="C25" library="X893" package="0603" value="2.2u" x="26" y="7.6" rot="R270"/>
 <element name="C26" library="X893" package="0603" value="0.1u" x="29.4" y="9.8" rot="R180"/>
 <element name="BEAD1" library="X893" package="0603" value="FB600" x="24.4" y="7.6" rot="R270"/>
-<element name="D4" library="X893" package="SOT-23@1" value="BAV99" x="14.8" y="14.4" rot="R270"/>
+<element name="D4" library="X893" package="SOT-23" value="BAV99" x="14.8" y="14.4" rot="R270"/>
 <element name="C13" library="X893" package="0603" value="0.1u" x="18" y="16.2"/>
 <element name="R26" library="X893" package="0603" value="100K" x="14.6" y="16.8"/>
 <element name="R27" library="X893" package="0603" value="100K" x="14.6" y="18.4"/>
@@ -1342,7 +1331,7 @@ Please make sure your boards conform to these design rules.</description>
 <element name="JP2" library="SparkFun" package="SJ_3" value="RX-SEL" x="55" y="20.2" rot="MR180"/>
 <element name="JP6" library="SparkFun" package="SJ_3" value="TX-SEL" x="55" y="17.6" rot="MR180"/>
 <element name="C46" library="X893" package="CT7343" value="220x6.3" x="57.9" y="39.2"/>
-<element name="RTS-CTS" library="SparkFun" package="SJ_2S-NO" value="" x="45.2" y="22.6" rot="R90"/>
+<element name="RTS-CTS" library="SparkFun" package="SJ_2S-NO" value="RTS-CTS" x="45.2" y="22.6" rot="R90"/>
 <element name="ANT1" library="X893" package="SMA-002" value="SMA-002" x="77.8" y="10.5" rot="R90"/>
 <element name="ANT2" library="X893" package="SMA-002" value="SMA-002" x="77.8" y="26.4" rot="R90"/>
 <element name="U2" library="X893" package="MFF2" value="SIMHOLDER-MFF2" x="51.4" y="3.2" rot="R180"/>
@@ -1361,7 +1350,7 @@ Please make sure your boards conform to these design rules.</description>
 <element name="U14" library="X893" package="GL865/8-DUAL" value="GL865/8-DUAL" x="59.4" y="19.6"/>
 <element name="U15" library="X893" package="SL868/9" value="SL868/9" x="64" y="16.45" rot="MR180"/>
 <element name="C27" library="X893" package="0603" value="0.1u" x="56.2" y="23.4" rot="MR90"/>
-<element name="GSM-RESET" library="SparkFun" package="SJ_2S-NO" value="" x="50.2" y="35" rot="MR270"/>
+<element name="GSM-RESET" library="SparkFun" package="SJ_2S-NO" value="GSM-RESET" x="50.2" y="35" rot="MR270"/>
 <element name="C30" library="X893" package="0603" value="4u7" x="41.8" y="25.2" rot="R180"/>
 <element name="C50" library="X893" package="0603" value="27p" x="72.6" y="10.55" rot="MR0"/>
 <element name="R13" library="X893" package="0603" value="DNP/100K" x="73.6" y="18.2" rot="MR180"/>
@@ -1369,10 +1358,10 @@ Please make sure your boards conform to these design rules.</description>
 <element name="L3" library="X893" package="0603" value="27nH" x="73" y="12.6" rot="MR270"/>
 <element name="C52" library="X893" package="0603" value="0.1u" x="49.8" y="38.2" rot="R90"/>
 <element name="IC1" library="stm32" package="TQFP48" value="STM32F10XCXT6" x="35.2" y="14.2" rot="R270"/>
-<element name="Q4" library="SparkFun" package="HC49U-V" value="" x="24.8" y="14.6" rot="R270"/>
+<element name="Q4" library="SparkFun" package="HC49U-V" value="8MHz" x="24.8" y="14.6" rot="R270"/>
 <element name="C56" library="X893" package="0603" value="15p" x="28.2" y="16.2" rot="R270"/>
 <element name="C57" library="X893" package="0603" value="15p" x="28.2" y="13.2" rot="R270"/>
-<element name="DTR-DSR" library="SparkFun" package="SJ_2S-NO" value="" x="45.2" y="25.8" rot="R90"/>
+<element name="DTR-DSR" library="SparkFun" package="SJ_2S-NO" value="DTR-DSR" x="45.2" y="25.8" rot="R90"/>
 <element name="C19" library="X893" package="0603" value="33P DNP" x="70" y="35"/>
 <element name="C9" library="X893" package="0603" value="4u7" x="47" y="23.4" rot="MR90"/>
 <element name="C10" library="X893" package="0603" value="0.1u" x="48.6" y="23.4" rot="MR90"/>
@@ -1393,8 +1382,8 @@ Please make sure your boards conform to these design rules.</description>
 <element name="GPIO1" library="SparkFun" package="PAD.1X1" value="" x="58.8" y="25.4" rot="MR0"/>
 <element name="GPIO2" library="SparkFun" package="PAD.1X1" value="" x="60.4" y="25.4" rot="MR0"/>
 <element name="GPIO3" library="SparkFun" package="PAD.1X1" value="" x="62" y="25.4" rot="MR0"/>
-<element name="GPS-RXD" library="SparkFun" package="SJ_2S-NO" value="" x="54.6" y="28.4" rot="MR180"/>
-<element name="GPS-TXD" library="SparkFun" package="SJ_2S-NO" value="" x="57" y="28.4" rot="MR180"/>
+<element name="GPS-RXD" library="SparkFun" package="SJ_2S-NO" value="GPS-RXD" x="54.6" y="28.4" rot="MR180"/>
+<element name="GPS-TXD" library="SparkFun" package="SJ_2S-NO" value="GPS-TXD" x="57" y="28.4" rot="MR180"/>
 <element name="GPIO8" library="SparkFun" package="PAD.1X1" value="" x="58.6" y="1.2" rot="MR0"/>
 <element name="J3" library="SparkFun" package="SJ_2S-NO" value="" x="42.6" y="31" rot="R180"/>
 <element name="SEND-A1" library="SparkFun" package="PAD.1X1" value="" x="21.4" y="9.8" rot="MR0"/>
@@ -2873,26 +2862,26 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="30.8" y1="5.2" x2="29.8" y2="5.2" width="0.2" layer="1"/>
 <wire x1="29.8" y1="5.2" x2="29.2" y2="4.6" width="0.2" layer="1"/>
 <wire x1="29.2" y1="4.6" x2="29.2" y2="2.6" width="0.2" layer="1"/>
-<wire x1="29.2" y1="2.6" x2="28.46" y2="1.86" width="0.2" layer="1"/>
-<wire x1="28.46" y1="1.86" x2="28" y2="1.46" width="0.2" layer="1"/>
+<wire x1="29.2" y1="2.6" x2="28.06" y2="1.46" width="0.2" layer="1"/>
+<wire x1="28.06" y1="1.46" x2="28" y2="1.46" width="0.2" layer="1"/>
 <wire x1="28" y1="1.46" x2="27.94" y2="1.4" width="0.2" layer="1"/>
 <wire x1="32.45" y1="8.95" x2="32.8" y2="8.6" width="0.2" layer="1"/>
 <wire x1="32.8" y1="8.6" x2="32.8" y2="7.2" width="0.2" layer="1"/>
 </signal>
 <signal name="GSM-ANT">
-<contactref element="ANT2" pad="A"/>
-<contactref element="ANT4" pad="1"/>
 <contactref element="U14" pad="34"/>
-<wire x1="77.8" y1="26.4" x2="77" y2="26.4" width="0.2" layer="16"/>
-<wire x1="71.15" y1="26.4" x2="77.8" y2="26.4" width="1" layer="1"/>
+<contactref element="ANT4" pad="1"/>
+<contactref element="ANT2" pad="A"/>
+<wire x1="77.8" y1="26.4" x2="77" y2="26.4" width="0" layer="19" extent="16-16"/>
+<wire x1="71.15" y1="26.4" x2="77" y2="26.4" width="0" layer="19" extent="1-16"/>
 </signal>
 <signal name="GPS-RX1">
 <contactref element="JP2" pad="3"/>
-<contactref element="U15" pad="21"/>
-<wire x1="58.2" y1="20.15" x2="57.85" y2="20.15" width="0.2" layer="16"/>
 <wire x1="57.85" y1="20.15" x2="57.8" y2="20" width="0.2" layer="16"/>
 <wire x1="57.8" y1="20" x2="56.2" y2="20" width="0.2" layer="16"/>
 <wire x1="56.2" y1="20" x2="55.99" y2="20.2" width="0.2" layer="16"/>
+<contactref element="U15" pad="21"/>
+<wire x1="58.2" y1="20.15" x2="57.85" y2="20.15" width="0" layer="19" extent="16-16"/>
 </signal>
 <signal name="GPS-TX1">
 <contactref element="JP6" pad="3"/>
@@ -3056,9 +3045,6 @@ Please make sure your boards conform to these design rules.</description>
 <via x="53.4" y="28.4" extent="1-16" drill="0.4"/>
 <wire x1="53.4" y1="28.4" x2="54.11" y2="28.4" width="0.2" layer="16"/>
 </signal>
-<signal name="N$2">
-<wire x1="55.2" y1="20.4" x2="56" y2="20.4" width="0.2" layer="16"/>
-</signal>
 <signal name="N$25">
 <contactref element="IC1" pad="5"/>
 <contactref element="Q4" pad="1"/>
@@ -3147,12 +3133,6 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="44" y1="25.4" x2="44.2" y2="25.6" width="0.2" layer="16"/>
 <wire x1="44.2" y1="25.6" x2="44.2" y2="32.26" width="0.2" layer="16"/>
 <wire x1="44.2" y1="32.26" x2="42.73" y2="33.73" width="0.2" layer="16"/>
-</signal>
-<signal name="GSM-RI">
-<contactref element="U14" pad="2"/>
-</signal>
-<signal name="GSM-DCD">
-<contactref element="U14" pad="1"/>
 </signal>
 <signal name="N$17">
 <wire x1="55.8" y1="17.4" x2="55.2" y2="17.4" width="0.2" layer="16"/>

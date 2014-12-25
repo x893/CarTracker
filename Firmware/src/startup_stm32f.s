@@ -2,7 +2,7 @@
 	IF		:DEF:BL_VERSION
 Stack_Size			EQU		0x000400
 	ELSE
-Stack_Size			EQU		0x0000100
+Stack_Size			EQU		0x000100
 	ENDIF
 					EXPORT Stack_Mem
 					AREA	STACK, NOINIT, READWRITE, ALIGN = 3

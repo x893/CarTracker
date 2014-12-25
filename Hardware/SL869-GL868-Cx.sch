@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.4">
+<eagle version="7.1.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -6344,7 +6344,7 @@ Source: www.kingbright.com</description>
 <part name="JP6" library="SparkFun" deviceset="JUMPER-3" device="SMD" value="TX-SEL"/>
 <part name="C46" library="X893" deviceset="CAP-POL" device="-7343" value="220x6.3"/>
 <part name="SUPPLY37" library="supply2" deviceset="GND" device=""/>
-<part name="RTS-CTS" library="SparkFun" deviceset="JUMPER-2" device="SMD-NO"/>
+<part name="RTS-CTS" library="SparkFun" deviceset="JUMPER-2" device="SMD-NO" value="RTS-CTS"/>
 <part name="ANT1" library="X893" deviceset="ANTENNA" device="-SMA-002" value="SMA-002"/>
 <part name="ANT2" library="X893" deviceset="ANTENNA" device="-SMA-002" value="SMA-002"/>
 <part name="SUPPLY13" library="supply2" deviceset="GND" device=""/>
@@ -6371,7 +6371,7 @@ Source: www.kingbright.com</description>
 <part name="SUPPLY31" library="supply2" deviceset="GND" device=""/>
 <part name="SUPPLY53" library="supply2" deviceset="GND" device=""/>
 <part name="C27" library="X893" deviceset="CAP" device="-0603" value="0.1u"/>
-<part name="GSM-RESET" library="SparkFun" deviceset="JUMPER-2" device="SMD-NO"/>
+<part name="GSM-RESET" library="SparkFun" deviceset="JUMPER-2" device="SMD-NO" value="GSM-RESET"/>
 <part name="SUPPLY2" library="supply2" deviceset="GND" device=""/>
 <part name="C30" library="X893" deviceset="CAP" device="-0603" value="4u7"/>
 <part name="C50" library="X893" deviceset="CAP" device="-0603" value="27p"/>
@@ -6383,13 +6383,13 @@ Source: www.kingbright.com</description>
 <part name="L3" library="X893" deviceset="INDUCTOR" device="-0603" value="27nH"/>
 <part name="C52" library="X893" deviceset="CAP" device="-0603" value="0.1u"/>
 <part name="IC1" library="stm32" deviceset="STM32F10XCXT6" device=""/>
-<part name="Q4" library="SparkFun" deviceset="CRYSTAL" device="HC49UV"/>
+<part name="Q4" library="SparkFun" deviceset="CRYSTAL" device="HC49UV" value="8MHz"/>
 <part name="C56" library="X893" deviceset="CAP" device="-0603" value="15p"/>
 <part name="C57" library="X893" deviceset="CAP" device="-0603" value="15p"/>
 <part name="SUPPLY60" library="supply2" deviceset="GND" device=""/>
 <part name="SUPPLY61" library="supply2" deviceset="GND" device=""/>
 <part name="SUPPLY65" library="supply2" deviceset="GND" device=""/>
-<part name="DTR-DSR" library="SparkFun" deviceset="JUMPER-2" device="SMD-NO"/>
+<part name="DTR-DSR" library="SparkFun" deviceset="JUMPER-2" device="SMD-NO" value="DTR-DSR"/>
 <part name="SUPPLY3" library="supply2" deviceset="GND" device=""/>
 <part name="SUPPLY8" library="supply2" deviceset="GND" device=""/>
 <part name="C19" library="X893" deviceset="CAP" device="-0603" value="33P DNP"/>
@@ -6416,8 +6416,8 @@ Source: www.kingbright.com</description>
 <part name="GPIO1" library="SparkFun" deviceset="TEST-POINT" device="1" value=""/>
 <part name="GPIO2" library="SparkFun" deviceset="TEST-POINT" device="1" value=""/>
 <part name="GPIO3" library="SparkFun" deviceset="TEST-POINT" device="1" value=""/>
-<part name="GPS-RXD" library="SparkFun" deviceset="JUMPER-2" device="SMD-NO"/>
-<part name="GPS-TXD" library="SparkFun" deviceset="JUMPER-2" device="SMD-NO"/>
+<part name="GPS-RXD" library="SparkFun" deviceset="JUMPER-2" device="SMD-NO" value="GPS-RXD"/>
+<part name="GPS-TXD" library="SparkFun" deviceset="JUMPER-2" device="SMD-NO" value="GPS-TXD"/>
 <part name="GPIO8" library="SparkFun" deviceset="TEST-POINT" device="1" value=""/>
 <part name="J3" library="SparkFun" deviceset="JUMPER-2" device="SMD-NO"/>
 <part name="SEND-A1" library="SparkFun" deviceset="TEST-POINT" device="1" value=""/>
@@ -6548,7 +6548,7 @@ Source: www.kingbright.com</description>
 <instance part="SPKM" gate="G$1" x="115.57" y="106.68"/>
 <instance part="MICP" gate="G$1" x="115.57" y="101.6"/>
 <instance part="MICN" gate="G$1" x="115.57" y="104.14"/>
-<instance part="JP4" gate="A" x="254" y="73.66"/>
+<instance part="JP4" gate="A" x="271.78" y="73.66"/>
 <instance part="U8" gate="G$1" x="240.03" y="193.04"/>
 <instance part="ANT3" gate="G$1" x="153.67" y="189.23" rot="MR0"/>
 <instance part="ANT4" gate="G$1" x="114.3" y="116.84" rot="MR0"/>
@@ -6585,13 +6585,13 @@ Source: www.kingbright.com</description>
 <instance part="IC1" gate="PORTD/OSC" x="243.84" y="83.82"/>
 <instance part="IC1" gate="AN_POWER" x="241.3" y="66.04"/>
 <instance part="IC1" gate="RESET" x="241.3" y="50.8"/>
-<instance part="Q4" gate="G$1" x="254" y="81.28" rot="R270"/>
-<instance part="C56" gate="G$1" x="264.16" y="83.82" rot="R90"/>
-<instance part="C57" gate="G$1" x="264.16" y="78.74" rot="R270"/>
-<instance part="SUPPLY60" gate="GND" x="266.7" y="78.74" rot="R90"/>
+<instance part="Q4" gate="G$1" x="256.54" y="81.28" rot="R270"/>
+<instance part="C56" gate="G$1" x="261.62" y="83.82" rot="R90"/>
+<instance part="C57" gate="G$1" x="261.62" y="78.74" rot="R270"/>
+<instance part="SUPPLY60" gate="GND" x="264.16" y="78.74" rot="R90"/>
 <instance part="SUPPLY61" gate="GND" x="218.44" y="60.96" rot="R270"/>
 <instance part="SUPPLY65" gate="GND" x="187.96" y="121.92"/>
-<instance part="DTR-DSR" gate="A" x="27.94" y="106.68"/>
+<instance part="DTR-DSR" gate="A" x="30.48" y="106.68"/>
 <instance part="SUPPLY3" gate="GND" x="-7.62" y="116.84" rot="R270"/>
 <instance part="SUPPLY8" gate="GND" x="40.64" y="66.04" rot="R270"/>
 <instance part="C19" gate="G$1" x="55.88" y="144.78" rot="MR180"/>
@@ -6613,8 +6613,8 @@ Source: www.kingbright.com</description>
 <instance part="SUPPLY43" gate="GND" x="251.46" y="91.44" rot="R90"/>
 <instance part="JP5" gate="G$1" x="170.18" y="170.18"/>
 <instance part="SUPPLY7" gate="GND" x="175.26" y="167.64" rot="R90"/>
-<instance part="J1" gate="A" x="71.12" y="157.48" rot="R180"/>
-<instance part="J2" gate="A" x="76.2" y="157.48" rot="R180"/>
+<instance part="J1" gate="A" x="73.66" y="157.48" rot="R180"/>
+<instance part="J2" gate="A" x="71.12" y="165.1"/>
 <instance part="GPIO1" gate="G$1" x="99.06" y="81.28"/>
 <instance part="GPIO2" gate="G$1" x="99.06" y="78.74"/>
 <instance part="GPIO3" gate="G$1" x="99.06" y="76.2"/>
@@ -7033,9 +7033,9 @@ Source: www.kingbright.com</description>
 <segment>
 <pinref part="C56" gate="G$1" pin="1"/>
 <pinref part="C57" gate="G$1" pin="2"/>
-<wire x1="266.7" y1="83.82" x2="266.7" y2="78.74" width="0.1524" layer="91"/>
+<wire x1="264.16" y1="83.82" x2="264.16" y2="78.74" width="0.1524" layer="91"/>
 <pinref part="SUPPLY60" gate="GND" pin="GND"/>
-<junction x="266.7" y="78.74"/>
+<junction x="264.16" y="78.74"/>
 </segment>
 <segment>
 <pinref part="IC1" gate="POWER" pin="VSS_1"/>
@@ -7062,7 +7062,7 @@ Source: www.kingbright.com</description>
 <pinref part="SUPPLY11" gate="GND" pin="GND"/>
 <pinref part="JP3" gate="G$1" pin="3"/>
 <pinref part="JP3" gate="G$1" pin="3"/>
-<wire x1="175.26" y1="144.78" x2="177.8" y2="144.78" width="0.1524" layer="91"/>
+<wire x1="177.8" y1="144.78" x2="175.26" y2="144.78" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="R5" gate="G$1" pin="2"/>
@@ -7264,7 +7264,7 @@ Source: www.kingbright.com</description>
 </segment>
 <segment>
 <pinref part="J1" gate="A" pin="2"/>
-<wire x1="68.58" y1="160.02" x2="66.04" y2="160.02" width="0.1524" layer="91"/>
+<wire x1="71.12" y1="160.02" x2="66.04" y2="160.02" width="0.1524" layer="91"/>
 <label x="66.04" y="160.02" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
@@ -7376,7 +7376,7 @@ Source: www.kingbright.com</description>
 </net>
 <net name="CPU-VBAT" class="0">
 <segment>
-<wire x1="254" y1="71.12" x2="251.46" y2="71.12" width="0.1524" layer="91"/>
+<wire x1="271.78" y1="71.12" x2="251.46" y2="71.12" width="0.1524" layer="91"/>
 <pinref part="JP4" gate="A" pin="1"/>
 <pinref part="IC1" gate="AN_POWER" pin="VBAT"/>
 </segment>
@@ -7491,7 +7491,6 @@ Source: www.kingbright.com</description>
 <net name="CPU-VCC" class="0">
 <segment>
 <wire x1="274.32" y1="60.96" x2="276.86" y2="60.96" width="0.1524" layer="91"/>
-<wire x1="256.54" y1="71.12" x2="274.32" y2="71.12" width="0.1524" layer="91"/>
 <wire x1="274.32" y1="71.12" x2="274.32" y2="60.96" width="0.1524" layer="91"/>
 <junction x="274.32" y="60.96"/>
 <label x="276.86" y="60.96" size="1.27" layer="95" xref="yes"/>
@@ -7868,24 +7867,19 @@ Source: www.kingbright.com</description>
 </net>
 <net name="GSM-ANT" class="0">
 <segment>
+<wire x1="96.52" y1="114.3" x2="114.3" y2="114.3" width="0.1524" layer="91"/>
+<label x="99.06" y="114.3" size="1.778" layer="95"/>
+<pinref part="U14" gate="G$1" pin="ANT"/>
 <wire x1="124.46" y1="114.3" x2="114.3" y2="114.3" width="0.1524" layer="91"/>
 <junction x="114.3" y="114.3"/>
 <pinref part="ANT2" gate="G$1" pin="ANT"/>
 <pinref part="ANT4" gate="G$1" pin="ANT"/>
 </segment>
-<segment>
-<wire x1="96.52" y1="114.3" x2="116.84" y2="114.3" width="0.1524" layer="91"/>
-<label x="99.06" y="114.3" size="1.778" layer="95"/>
-<pinref part="U14" gate="G$1" pin="ANT"/>
-</segment>
 </net>
 <net name="GPS-RX1" class="0">
 <segment>
-<wire x1="68.58" y1="194.31" x2="62.23" y2="194.31" width="0.1524" layer="91"/>
 <pinref part="JP2" gate="G$1" pin="3"/>
-</segment>
-<segment>
-<wire x1="69.85" y1="194.31" x2="68.58" y2="194.31" width="0.1524" layer="91"/>
+<wire x1="69.85" y1="194.31" x2="62.23" y2="194.31" width="0.1524" layer="91"/>
 <wire x1="69.85" y1="194.31" x2="69.85" y2="204.47" width="0.1524" layer="91"/>
 <pinref part="U15" gate="G$1" pin="RX"/>
 <wire x1="69.85" y1="204.47" x2="81.28" y2="204.47" width="0.1524" layer="91"/>
@@ -7979,11 +7973,6 @@ Source: www.kingbright.com</description>
 <pinref part="U5" gate="G$1" pin="DVDD_IO"/>
 </segment>
 </net>
-<net name="N$2" class="0">
-<segment>
-<wire x1="138.43" y1="186.69" x2="139.7" y2="186.69" width="0.1524" layer="91"/>
-</segment>
-</net>
 <net name="GSM-RESET" class="0">
 <segment>
 <pinref part="U14" gate="G$1" pin="RESET"/>
@@ -8034,21 +8023,21 @@ Source: www.kingbright.com</description>
 <segment>
 <pinref part="IC1" gate="PORTD/OSC" pin="PD0/OSC&lt;="/>
 <pinref part="Q4" gate="G$1" pin="1"/>
-<wire x1="251.46" y1="83.82" x2="254" y2="83.82" width="0.1524" layer="91"/>
+<wire x1="251.46" y1="83.82" x2="256.54" y2="83.82" width="0.1524" layer="91"/>
 <pinref part="C56" gate="G$1" pin="2"/>
-<wire x1="254" y1="83.82" x2="261.62" y2="83.82" width="0.1524" layer="91"/>
-<junction x="254" y="83.82"/>
+<wire x1="256.54" y1="83.82" x2="259.08" y2="83.82" width="0.1524" layer="91"/>
+<junction x="256.54" y="83.82"/>
 </segment>
 </net>
 <net name="N$30" class="0">
 <segment>
 <pinref part="C57" gate="G$1" pin="1"/>
 <pinref part="Q4" gate="G$1" pin="2"/>
-<wire x1="261.62" y1="78.74" x2="254" y2="78.74" width="0.1524" layer="91"/>
-<wire x1="254" y1="78.74" x2="251.46" y2="78.74" width="0.1524" layer="91"/>
+<wire x1="259.08" y1="78.74" x2="256.54" y2="78.74" width="0.1524" layer="91"/>
+<wire x1="256.54" y1="78.74" x2="251.46" y2="78.74" width="0.1524" layer="91"/>
 <wire x1="251.46" y1="78.74" x2="251.46" y2="81.28" width="0.1524" layer="91"/>
 <pinref part="IC1" gate="PORTD/OSC" pin="PD1/OSC=&gt;"/>
-<junction x="254" y="78.74"/>
+<junction x="256.54" y="78.74"/>
 </segment>
 </net>
 <net name="GSM-RTS" class="0">
@@ -8087,10 +8076,10 @@ Source: www.kingbright.com</description>
 <segment>
 <pinref part="U14" gate="G$1" pin="C107/DSR(O)/GPO_C"/>
 <pinref part="DTR-DSR" gate="A" pin="2"/>
-<wire x1="45.72" y1="101.6" x2="30.48" y2="101.6" width="0.1524" layer="91"/>
-<wire x1="30.48" y1="101.6" x2="30.48" y2="104.14" width="0.1524" layer="91"/>
-<wire x1="30.48" y1="101.6" x2="12.7" y2="101.6" width="0.1524" layer="91"/>
-<junction x="30.48" y="101.6"/>
+<wire x1="45.72" y1="101.6" x2="33.02" y2="101.6" width="0.1524" layer="91"/>
+<wire x1="33.02" y1="101.6" x2="33.02" y2="104.14" width="0.1524" layer="91"/>
+<wire x1="33.02" y1="101.6" x2="12.7" y2="101.6" width="0.1524" layer="91"/>
+<junction x="33.02" y="101.6"/>
 <label x="12.7" y="101.6" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
@@ -8101,32 +8090,18 @@ Source: www.kingbright.com</description>
 </net>
 <net name="GSM-DTR" class="0">
 <segment>
-<wire x1="45.72" y1="99.06" x2="27.94" y2="99.06" width="0.1524" layer="91"/>
+<wire x1="45.72" y1="99.06" x2="30.48" y2="99.06" width="0.1524" layer="91"/>
 <label x="12.7" y="99.06" size="1.27" layer="95" rot="R180" xref="yes"/>
 <pinref part="U14" gate="G$1" pin="C108/DTR(I)/GPI_E"/>
-<wire x1="27.94" y1="99.06" x2="12.7" y2="99.06" width="0.1524" layer="91"/>
+<wire x1="30.48" y1="99.06" x2="12.7" y2="99.06" width="0.1524" layer="91"/>
 <pinref part="DTR-DSR" gate="A" pin="1"/>
-<wire x1="27.94" y1="104.14" x2="27.94" y2="99.06" width="0.1524" layer="91"/>
-<junction x="27.94" y="99.06"/>
+<wire x1="30.48" y1="104.14" x2="30.48" y2="99.06" width="0.1524" layer="91"/>
+<junction x="30.48" y="99.06"/>
 </segment>
 <segment>
 <wire x1="7.62" y1="119.38" x2="10.16" y2="119.38" width="0.1524" layer="91"/>
 <label x="10.16" y="119.38" size="1.27" layer="95" xref="yes"/>
 <pinref part="SV1" gate="G$1" pin="3"/>
-</segment>
-</net>
-<net name="GSM-RI" class="0">
-<segment>
-<pinref part="U14" gate="G$1" pin="C125/RING/GPO_B"/>
-<wire x1="45.72" y1="104.14" x2="43.18" y2="104.14" width="0.1524" layer="91"/>
-<label x="43.18" y="104.14" size="1.27" layer="95" rot="R180" xref="yes"/>
-</segment>
-</net>
-<net name="GSM-DCD" class="0">
-<segment>
-<pinref part="U14" gate="G$1" pin="C109/DCD/GPO_A"/>
-<wire x1="45.72" y1="106.68" x2="43.18" y2="106.68" width="0.1524" layer="91"/>
-<label x="43.18" y="106.68" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="PA1.SENS-A1" class="0">
@@ -8234,10 +8209,9 @@ Source: www.kingbright.com</description>
 <pinref part="R12" gate="G$1" pin="1"/>
 <pinref part="J1" gate="A" pin="1"/>
 <pinref part="J2" gate="A" pin="2"/>
-<wire x1="71.12" y1="160.02" x2="73.66" y2="160.02" width="0.1524" layer="91"/>
+<wire x1="73.66" y1="160.02" x2="73.66" y2="162.56" width="0.1524" layer="91"/>
 <wire x1="96.52" y1="162.56" x2="73.66" y2="162.56" width="0.1524" layer="91"/>
-<wire x1="73.66" y1="162.56" x2="73.66" y2="160.02" width="0.1524" layer="91"/>
-<junction x="73.66" y="160.02"/>
+<junction x="73.66" y="162.56"/>
 <junction x="96.52" y="162.56"/>
 </segment>
 </net>
@@ -8249,9 +8223,8 @@ Source: www.kingbright.com</description>
 </segment>
 <segment>
 <pinref part="J2" gate="A" pin="1"/>
-<wire x1="76.2" y1="160.02" x2="76.2" y2="165.1" width="0.1524" layer="91"/>
-<wire x1="76.2" y1="165.1" x2="66.04" y2="165.1" width="0.1524" layer="91"/>
-<label x="66.04" y="165.1" size="1.27" layer="95" rot="R180" xref="yes"/>
+<wire x1="71.12" y1="162.56" x2="66.04" y2="162.56" width="0.1524" layer="91"/>
+<label x="66.04" y="162.56" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="GPIO1" class="0">
@@ -8336,14 +8309,29 @@ Source: www.kingbright.com</description>
 </sheet>
 </sheets>
 <errors>
+<approved hash="102,1,247.65,185.42,PGND,GND,,,,"/>
+<approved hash="104,1,170.18,64.77,U5,DVDD_IO,ACC-VCC,,,"/>
+<approved hash="104,1,170.18,62.23,U5,AVDD,ACC-VCC,,,"/>
 <approved hash="202,1,45.72,78.74,U14,ADC_IN1,,,,"/>
 <approved hash="202,1,45.72,81.28,U14,ADC_IN2,,,,"/>
 <approved hash="202,1,116.84,209.55,U15,CAN0RX,,,,"/>
-<approved hash="209,1,45.72,73.66,RXD1,,,,,"/>
-<approved hash="109,1,116.84,114.3,GSM-ANT,,,,,"/>
-<approved hash="109,1,114.3,114.3,GSM-ANT,,,,,"/>
-<approved hash="109,1,68.58,194.31,GPS-RX1,,,,,"/>
-<approved hash="109,1,68.58,194.31,GPS-RX1,,,,,"/>
+<approved hash="104,1,218.44,91.44,IC1POWER,VDD_1,CPU-VCC,,,"/>
+<approved hash="104,1,218.44,86.36,IC1POWER,VDD_2,CPU-VCC,,,"/>
+<approved hash="104,1,218.44,81.28,IC1POWER,VDD_3,CPU-VCC,,,"/>
+<approved hash="104,1,218.44,71.12,IC1POWER,VSS_1,GND,,,"/>
+<approved hash="104,1,218.44,66.04,IC1POWER,VSS_2,GND,,,"/>
+<approved hash="104,1,218.44,60.96,IC1POWER,VSS_3,GND,,,"/>
+<approved hash="104,1,251.46,71.12,IC1AN_POWER,VBAT,CPU-VBAT,,,"/>
+<approved hash="104,1,251.46,66.04,IC1AN_POWER,VSSA,GND,,,"/>
+<approved hash="108,1,175.26,144.78,GND,,,,,"/>
+<approved hash="113,1,172.043,147.515,JP3,,,,,"/>
+<approved hash="113,1,0,122.115,SV1,,,,,"/>
+<approved hash="113,1,172.043,172.915,JP5,,,,,"/>
+<approved hash="113,1,73.2705,158.976,J1,,,,,"/>
+<approved hash="113,1,71.5095,163.604,J2,,,,,"/>
+<approved hash="113,1,189.004,131.691,J3,,,,,"/>
+<approved hash="113,1,281.618,140.97,LED1,,,,,"/>
+<approved hash="113,1,287.342,140.97,LED2,,,,,"/>
 </errors>
 </schematic>
 </drawing>

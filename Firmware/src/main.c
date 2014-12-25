@@ -23,6 +23,14 @@
 	#if ( USE_USB )
 		USB_OTG_CORE_HANDLE USB_OTG_dev;
 	#endif
+
+	#if (USE_AVERAGE == 1)
+		#warning AVERAGE FILTER
+	#endif
+	#if (USE_KALMAN == 1)
+		#warning KALMAN FILTER
+	#endif
+
 #endif
 
 #if   defined( STM32F101RC )
@@ -35,13 +43,6 @@
 	#warning STM32F405RG
 #else
 	#error "CPU not define"
-#endif
-
-#if (USE_AVERAGE == 1)
-	#warning AVERAGE FILTER
-#endif
-#if (USE_KALMAN == 1)
-	#warning KALMAN FILTER
 #endif
 
 const char VERSION[] = ",vers="VERSION_INFO;
@@ -67,6 +68,8 @@ int main(void)
 {
 	RCC_ClearFlag();
 	SystemCoreClockUpdate();
+
+	DBGMCU_Config(DBGMCU_SLEEP | DBGMCU_STOP | DBGMCU_STANDBY, ENABLE);
 
 	GlobalStatus	= 0;
 	
@@ -383,6 +386,18 @@ void Default_Handler(void)
 }
 
 /*******************************************************************************
+* Function Name	:	Deinitialize GSM/GPS
+* Description	:
+* Input			:
+*******************************************************************************/
+void GsmGpsDeInit(void)
+{
+	GSM_DEINIT();
+	GPS_DEINIT();
+}
+
+
+/*******************************************************************************
 * Function Name	:	ShowFatalError
 * Description	:	Show fatal errors and make a SystemReset
 * Input			:	error code
@@ -393,17 +408,19 @@ void ShowFatalErrorOnly(uint8_t errorCode)
 
 	__disable_irq();
 
-	LED_OFF();
+	GsmGpsDeInit();
+
+	LED2_ON();
 	count = (errorCode & 0xF0) >> 4;
 	if (count != 0)
 	{
 		DWT_Delay_ms(1000);
 		while(count-- != 0)
 		{
-			LED_ON();
-			DWT_Delay_ms(30);
-			LED_OFF();
-			DWT_Delay_ms(500);
+			LED1_ON();
+			DWT_Delay_ms(100);
+			LED2_ON();
+			DWT_Delay_ms(400);
 		}
 		DWT_Delay_ms(500);
 	}
@@ -413,15 +430,15 @@ void ShowFatalErrorOnly(uint8_t errorCode)
 		DWT_Delay_ms(500);
 		while(count-- != 0)
 		{
-			LED_ON();
-			DWT_Delay_ms(30);
-			LED_OFF();
-			DWT_Delay_ms(500);
+			LED1_ON();
+			DWT_Delay_ms(100);
+			LED2_ON();
+			DWT_Delay_ms(400);
 		}
 		DWT_Delay_ms(1000);
 	}
-
-	//!!! HardwareInit();
+	LED2_OFF();
+	DWT_Delay_ms(1000);
 }
 
 /*******************************************************************************
@@ -446,12 +463,12 @@ void SetLedWithoutKey(uint8_t state)
 #if defined ( KEY_PRESS )
 	if (KeyState == 0)
 	{
-		if (state)	LED_ON();
-		else		LED_OFF();
+		if (state)	LED1_ON();
+		else		LED2_ON();
 	}
 #else
-	if (state)	LED_ON();
-	else		LED_OFF();
+	if (state)	LED1_ON();
+	else		LED2_ON();
 #endif
 }
 
@@ -464,6 +481,7 @@ void ShowError(uint8_t errorCode)
 {
 	uint8_t count;
 
+	LED2_ON();
 	count = (errorCode & 0xF0) >> 4;
 	if (count != 0)
 	{
@@ -485,6 +503,7 @@ void ShowError(uint8_t errorCode)
 	}
 	else
 	{
+		DEBUG_PRINTF("SOFT ERROR: %02x\n", errorCode);
 		if (count > 1)
 		{
 			vTaskDelay(1000);
@@ -498,6 +517,7 @@ void ShowError(uint8_t errorCode)
 		}
 		vTaskDelay(1000);
 	}
+	LED2_OFF();
 }
 
 #endif
@@ -527,8 +547,8 @@ uint8_t HardwareInit(void)
 	/* Configure HCLK clock as SysTick clock source. */
 	SysTick_CLKSourceConfig( SysTick_CLKSource_HCLK );
 
-#if		defined( STM32F2XX ) || \
-		defined( STM32F4XX )
+#if	defined( STM32F2XX ) || \
+	defined( STM32F4XX )
 
 	// Enable CRC clock
 	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_CRC, ENABLE);
@@ -552,9 +572,6 @@ uint8_t HardwareInit(void)
 		defined( STM32F10X_MD ) || \
 		defined( STM32F10X_MD_VL )
 
-	// Disable JTAG
-	GPIO_PinRemapConfig(GPIO_Remap_SWJ_JTAGDisable, ENABLE);
-
 	// Enable CRC clock
 	RCC_AHBPeriphClockCmd(RCC_AHBPeriph_CRC, ENABLE);
 
@@ -566,6 +583,10 @@ uint8_t HardwareInit(void)
 		RCC_APB2Periph_GPIOD |
 		RCC_APB2Periph_AFIO,
 		ENABLE);
+
+	// Disable JTAG
+	GPIO_PinRemapConfig(GPIO_Remap_SWJ_JTAGDisable, ENABLE);
+
 	// Enable SWD/SWC pins PA13, PA14
 	// All other to analog in
 	GPIOA->CRL = 0x44444444; GPIOA->CRH = 0x48844444;
@@ -575,9 +596,7 @@ uint8_t HardwareInit(void)
 
 #endif
 
-	GSM_DEINIT();
-	GPS_DEINIT();
-
+	GsmGpsDeInit();
 	LED_INIT();
 	CPU_PWR_INIT();
 	VDC_INIT();
