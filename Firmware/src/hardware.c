@@ -1,6 +1,18 @@
 #include "hardware.h"
 
-void Led1_On()
+#if defined( UTRACKER_3 )
+void Led_On(void)
+{
+	pinLow(LED_PIN);
+}
+void Led_Off(void)
+{
+	pinHigh(LED_PIN);
+}
+#endif
+
+#if defined( UTRACKER_4 )
+void Led1_On(void)
 {
 	pinHigh(LED1_PIN);
 	pinLow (LED2_PIN);
@@ -15,6 +27,7 @@ void Leds_Off(void)
 	pinLow (LED1_PIN);
 	pinLow (LED2_PIN);
 }
+#endif
 
 #if defined( STM32F2XX ) || defined( STM32F4XX )
 

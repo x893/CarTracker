@@ -137,7 +137,7 @@
           <Target>
             <UseTarget>1</UseTarget>
             <LoadApplicationAtStartup>1</LoadApplicationAtStartup>
-            <RunToMain>0</RunToMain>
+            <RunToMain>1</RunToMain>
             <RestoreBreakpoints>1</RestoreBreakpoints>
             <RestoreWatchpoints>1</RestoreWatchpoints>
             <RestoreMemoryDisplay>1</RestoreMemoryDisplay>
@@ -175,7 +175,7 @@
           </Flash1>
           <bUseTDR>1</bUseTDR>
           <Flash2>BIN\UL2CM3.DLL</Flash2>
-          <Flash3>"" ()</Flash3>
+          <Flash3></Flash3>
           <Flash4></Flash4>
           <pFcarmOut></pFcarmOut>
           <pFcarmGrp></pFcarmGrp>
@@ -358,14 +358,14 @@
             <Rwpi>0</Rwpi>
             <wLevel>0</wLevel>
             <uThumb>0</uThumb>
-            <uSurpInc>1</uSurpInc>
+            <uSurpInc>0</uSurpInc>
             <uC99>0</uC99>
             <useXO>0</useXO>
             <VariousControls>
               <MiscControls></MiscControls>
               <Define>NDEBUG USE_STDPERIPH_DRIVER STM32F10X_MD_VL STM32F100CB VECT_TAB_OFFSET=0x1000 UTRACKER_4</Define>
               <Undefine></Undefine>
-              <IncludePath>src;src\FreeRTOS.8.0.1;src\FreeRTOS.8.0.1\include;src\FreeRTOS.8.0.1\portable\MemMang;src\FreeRTOS.8.0.1\portable\RVDS\ARM_CM3;src\nmealib\include;Libraries\STM32F10x_StdPeriph_Driver\inc;.\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x;.\Libraries\CMSIS\Include</IncludePath>
+              <IncludePath>src;src\FreeRTOS.8.0.1;src\FreeRTOS.8.0.1\include;src\FreeRTOS.8.0.1\portable\MemMang;src\FreeRTOS.8.0.1\portable\RVDS\ARM_CM3;src\nmealib\include;Libraries\STM32F10x_StdPeriph_Driver\inc</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -778,7 +778,7 @@
             <RestoreSysVw>1</RestoreSysVw>
           </Target>
           <RunDebugAfterBuild>0</RunDebugAfterBuild>
-          <TargetSelection>12</TargetSelection>
+          <TargetSelection>11</TargetSelection>
           <SimDlls>
             <CpuDll></CpuDll>
             <CpuDllArguments></CpuDllArguments>
@@ -792,7 +792,7 @@
             <PeripheralDll></PeripheralDll>
             <PeripheralDllArguments></PeripheralDllArguments>
             <InitializationFile></InitializationFile>
-            <Driver>BIN\CMSIS_AGDI.dll</Driver>
+            <Driver>STLink\ST-LINKIII-KEIL_SWO.dll</Driver>
           </TargetDlls>
         </DebugOption>
         <Utilities>

@@ -54,8 +54,8 @@ void	pinRemap	(uint8_t pin, uint8_t GPIO_AF);
 void Led1_On(void);
 void Led2_On(void);
 void Leds_Off(void);
-
-
+void Led_On(void);
+void Led_Off(void);
 
 #define ERROR_LOWEST_POWER			0x02
 
@@ -368,13 +368,12 @@ extern const char VERSION[];
 
 	#define LED_ON()			LED1_ON()
 	#define LED_OFF()			LED1_OFF()
-
 	#define LED_INIT()			\
-		do	{					\
-			pinLow(LED1_PIN);					\
-			pinLow(LED2_PIN);					\
-			pinMode(LED1_PIN, PinMode_Out_PP);	\
-			pinMode(LED2_PIN, PinMode_Out_PP);	\
+		do	{										\
+			pinHigh(LED1_PIN);						\
+			pinHigh(LED2_PIN);						\
+			pinMode(LED1_PIN, PinMode_Out_PP_2);	\
+			pinMode(LED2_PIN, PinMode_Out_PP_2);	\
 		} while(0)
 
 	#define ACC_INT1_PIN		PB5
@@ -617,13 +616,16 @@ extern const char VERSION[];
 	#define CPU_PWR_INIT()			CPU_PWR_ON(); pinMode(CPU_PWR_PIN, PinMode_Out_PP)
 
 	#define LED_PIN					PB14
-	#define LED_ON()				Led_on()
-	#define LED_OFF()				Led_off()
-	#define LED_TOGGLE()			pinToggle(LED_PIN)
+	#define LED_ON()				Led_On()
+	#define LED_OFF()				Led_Off()
+	#define LED1_ON()				LED_ON()
+	#define LED1_OFF()				LED_OFF()
+	#define LED2_ON()
+	#define LED2_OFF()
 	#define LED_INIT()				\
 		do	{						\
 			LED_OFF();							\
-			pinMode(LED_PIN, PinMode_Out_OD);	\
+			pinMode(LED_PIN, PinMode_Out_OD_2);	\
 		} while(0)
 
 	// #define KEY_PIN					PB15

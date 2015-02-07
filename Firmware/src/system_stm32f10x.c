@@ -313,7 +313,7 @@ void SetSysClockTo24(void)
   * @param  None
   * @retval None
   */
-#warning SYSCLK_FREQ_36MHz
+	#warning SYSCLK_FREQ_36MHz
 void SetSysClockTo36(void)
 {
 	__IO uint32_t StartUpCounter = HSE_STARTUP_TIMEOUT;

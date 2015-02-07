@@ -415,11 +415,12 @@ void ShowFatalErrorOnly(uint8_t errorCode)
 	if (count != 0)
 	{
 		DWT_Delay_ms(1000);
-		while(count-- != 0)
+		while(count != 0)
 		{
+			--count;
 			LED1_ON();
 			DWT_Delay_ms(100);
-			LED2_ON();
+			LED1_OFF();
 			DWT_Delay_ms(400);
 		}
 		DWT_Delay_ms(500);
@@ -428,11 +429,12 @@ void ShowFatalErrorOnly(uint8_t errorCode)
 	if (count != 0)
 	{
 		DWT_Delay_ms(500);
-		while(count-- != 0)
+		while(count != 0)
 		{
+			--count;
 			LED1_ON();
 			DWT_Delay_ms(100);
-			LED2_ON();
+			LED1_OFF();
 			DWT_Delay_ms(400);
 		}
 		DWT_Delay_ms(1000);
@@ -694,13 +696,12 @@ uint8_t HardwareInit(void)
 
 #if (USE_SERIAL_DEBUG)
 
-	DEBUG_PIN_INIT();
-
 	USART_StructInit(&USART_InitStructure);
 	USART_InitStructure.USART_BaudRate = 115200;
 	USART_Init(DEBUG_USART, &USART_InitStructure);
 	USART_Cmd(DEBUG_USART, ENABLE);
 
+	DEBUG_PIN_INIT();
 	DebugInit();
 
 #endif

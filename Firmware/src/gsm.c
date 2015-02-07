@@ -367,7 +367,6 @@ uint8_t GsmInit(void)
 #endif
 
 	// Initialize GSM
-	GSM_PIN_INIT();
 	GSM_USART_CLK(ENABLE);
 
 	rb_Init(&GsmContext.RB_Tx, gsmTxBuffer, sizeof(gsmTxBuffer));
@@ -376,6 +375,8 @@ uint8_t GsmInit(void)
 	usart_init.USART_BaudRate = 115200;
 	USART_Init(GSM_USART, &usart_init);
 	USART_Cmd(GSM_USART, ENABLE);
+
+	GSM_PIN_INIT();
 
 	GsmContext.RxMode = GSM_MODE_IGNORE;
 	USART_ITConfig(GSM_USART, USART_IT_RXNE, ENABLE);
