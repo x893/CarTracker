@@ -695,8 +695,8 @@ extern const char VERSION[];
 	#define GSM_RTS_DEINIT()		GSM_RTS_HIGH();	pinMode(GSM_DTR_PIN, PinMode_AIn)
 
 	#define GSM_CTS_PIN				PB2
-	#define GSM_CTS_INIT()			pinMode(GSM_RTS_PIN, PinMode_In)
-	#define GSM_CTS_DEINIT()		pinMode(GSM_RTS_PIN, PinMode_AIn)
+	#define GSM_CTS_INIT()			pinMode(GSM_CTS_PIN, PinMode_In)
+	#define GSM_CTS_DEINIT()		pinMode(GSM_CTS_PIN, PinMode_AIn)
 
 	#define GSM_DTR_PIN				PC9
 	#define GSM_DTR_HIGH()			pinHigh(GSM_DTR_PIN)
