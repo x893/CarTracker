@@ -45,7 +45,7 @@ typedef struct {
 	const char	* TcpData;
 	const char	* TcpReady;
 	const char	* TcpClose;			// 7
-	const char	* PSSSTK;
+	const char	* PostInit;
 	const char	* GetIMEI;
 } GsmCommands_t;
 
@@ -152,9 +152,6 @@ const char GSM_CONNECT[]		= "CONNECT";
 const char GSM_NO_CARRIER[]		= "NO CARRIER";
 
 const char GSM_K0[]				= "AT+IFC=0,0\r\n";
-const char GSM_PSSTKI[]			= "AT*PSSTKI=0\r\n";
-const char GSM_GSN[]			= "AT+GSN\r\n";
-const char GSM_CGSN[]			= "AT+CGSN\r\n";
 const char GSM_ATI3[]			= "ATI3\r\n";
 const char GSM_WIPPEERCLOSE[]	= "+WIPPEERCLOSE:";
 const char GSM_WIPCFG0[]		= "AT+WIPCFG=0\r\n";
@@ -262,7 +259,7 @@ const GsmCommands_t Commands_GL865 =
 	NULL,
 	NULL,
 	NULL,
-	NULL,
+	"AT#SKIPESC=1\r\n",
 	"AT+CGSN\r\n"
 };
 
@@ -336,8 +333,6 @@ uint8_t GsmInit(void)
 	uint8_t retry;
 	char *item;
 
-	GsmContext.Commands = &Commands_WS228;
-
 	GSM_PWR_ON();
 
 	vTaskDelay(500);
@@ -384,6 +379,7 @@ uint8_t GsmInit(void)
 	GSM_DTR_LOW();
 	GSM_RTS_LOW();
 
+	GsmContext.Commands = &Commands_WS228;	// Default Wismo228
 	retry = 8;
 	while(retry-- != 0)
 	{
@@ -397,7 +393,7 @@ uint8_t GsmInit(void)
 			{
 				item = TokenBefore(gsmToken(NULL), "OK");
 				if (item != NULL && strcmp(item, "Telit") == 0)
-					GsmContext.Commands = &Commands_GL865;
+					GsmContext.Commands = &Commands_GL865;	// Set Telit GL865/868
 			}
 			
 			if (E_OK == gsmCmd0(GSM_CMEE)
@@ -406,8 +402,10 @@ uint8_t GsmInit(void)
 				)
 			{
 				gsmCmd0(GSM_COPS0);
-				if (GsmContext.Commands->PSSSTK != NULL)
-					gsmCmd1(GsmContext.Commands->PSSSTK, 5000);
+				if (GsmContext.Commands->PostInit != NULL)
+				{
+					gsmCmd1(GsmContext.Commands->PostInit, 5000);
+				}
 
 				if (E_OK == gsmCmd0(GsmContext.Commands->GetIMEI))
 				{
