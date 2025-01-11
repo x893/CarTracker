@@ -460,7 +460,7 @@ restart_gps:
 					}
 					else if (rmc->speed < AVERAGE_SPEED_10)
 					{
-						gc->AverageMaxCount = AVERAGE_SUM_5;
+						gc->AverageMaxCount = AVERAGE_SUM_10;
 						use_kalman = false;
 					}
 					else if (rmc->speed < AVERAGE_SPEED_20)
